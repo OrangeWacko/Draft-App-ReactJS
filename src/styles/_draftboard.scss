@@ -1,0 +1,290 @@
+/* Draftboard: tiles with balances and max bid */
+/* Grid */
+
+.draft-board {
+  overflow: hidden;
+  background: url("../assets/draft-bg-white.jpg") #e4e4f0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  padding: 30px;
+}
+
+.grid {}
+
+.grid-item {
+  font-family: $font-family-sans-serif;
+
+  //float: left;
+  height: 21vh;
+  background: $brand-primary;
+  border-radius: 5px;
+
+  //width: 23%;
+  //margin: 10px;
+  padding: 15px;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+
+  .single-team-inner {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.grid-item a {
+  color: white;
+}
+
+.grid-item:nth-child(odd) {
+  // background: #1c98d2;
+  // color: white;
+  background: darken($brand-primary, 10%);
+
+  .manager-name {
+    //color: $yellow;
+
+  }
+}
+
+.grid-item:nth-child(even) a {
+  // color: white;
+}
+
+.manager-name {
+  font-size: 25px;
+  line-height: 1.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.current-roster {
+  text-align: center;
+  font-size: 15px;
+  display: block;
+  padding: 0 !important;
+  font-family: $font-family-serif;
+}
+
+.draft-board .ui.grid .money-info {
+  background: #edf3f4;
+  height: 100%;
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding: 0;
+  color: white;
+  font-family: $font-family-serif;
+}
+
+.draft-board .budget {
+  background: white;
+  color: $text-color;
+  padding: 12%;
+  background: #edf3f4;
+  border-bottom: 1px solid darken(#edf3f4, 20%);
+  height: 50%;
+}
+
+.draft-board .bid {
+  color: $red;
+  padding: 12%;
+  height: 50%;
+}
+
+.money-info {
+  text-align: center;
+}
+
+.money-info sup {
+  font-size: 0.45em;
+  position: relative;
+  top: -0.4em;
+}
+
+.money-info h3 {
+  font-size: 16px;
+  margin: 0 0 2px 0;
+  padding: 0;
+  color: #141a1e;
+  font-weight: 400;
+}
+
+.money-info h4 {
+  padding: 0;
+  margin: 0;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1em;
+}
+
+.grid-item.grid-item-width3 {
+  width: 46%;
+}
+
+.grid-item.grid-item-width4 {}
+
+@media screen and (min-width: 768px) {
+  .grid-item {
+    // height: 130px;
+
+  }
+
+  .grid-item.grid-item-width4 {
+    // height: 170px;
+
+  }
+
+  .grid-item.grid-item-width3 {
+    width: 32%;
+  }
+
+  .manager-name {
+    font-size: 34px;
+  }
+
+  .money-info h4 {
+    font-size: 35px;
+  }
+}
+
+/* Single Team */
+
+.single-team {
+  max-width: 450px;
+  margin: 7% auto;
+  background: $text-color;
+  border-radius: 5px;
+  color: white;
+  padding: 20px;
+
+  .button {
+    margin-top: 35px;
+    padding: 13px 15px;
+    font-size: 20px !important;
+    height: 55px;
+  }
+}
+
+.single-team h1 {
+  text-align: center;
+  color: $brand-primary;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.single-team h3.blue {
+  color: white;
+}
+
+.single-team h3 {
+  text-align: center;
+  color: white;
+  font-family: $font-family-serif;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+.single-team h3.max-bid {
+  color: $yellow;
+}
+
+.single-team h3 strong {
+  color: #a8bcc4;
+  font-weight: 300;
+}
+
+.single-team sup {
+  font-size: 0.6em;
+  position: relative;
+  margin-right: 4px;
+}
+
+.single-team .team-players {
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 20px;
+
+  li {
+    clear: both;
+    border-bottom: 1px solid lighten($text-color, 10%);
+    padding: 10px 20px;
+  }
+
+  span {
+    display: block;
+    float: right;
+    padding: 6px 15px;
+    border-radius: 3px;
+    position: relative;
+    top: -3px;
+    background: $yellow;
+    color: #141a1e;
+    line-height: 1em;
+    font-size: 1em;
+    font-family: $font-family-sans-serif;
+  }
+}
+
+.single-team ul,
+.single-team li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .single-team h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .manager-name {
+    font-size: 42px;
+  }
+
+  .draft-board .budget,
+  .draft-board .bid {
+    padding: 5%;
+  }
+
+  .current-roster {
+    font-size: 20px;
+  }
+
+  .money-info h4 {
+    font-size: 42px;
+  }
+
+  .single-team .team-players {
+    font-size: 18px;
+  }
+
+  .single-team h1 {
+    font-size: 60px;
+  }
+
+  .single-team h3 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  .manager-name {
+    font-size: 52px;
+  }
+
+  .money-info h4 {
+    font-size: 55px;
+  }
+}

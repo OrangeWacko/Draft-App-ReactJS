@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Asap+Condensed:500,700|Lora");
+
+// Body
+$body-bg: #f5f8fa;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Brands
+$brand-primary: #10a6d6;
+$brand-info: #8eb4cb;
+$brand-success: #2ab27b;
+$brand-warning: #cbb956;
+$brand-danger: #bf5329;
+
+$red: #f15a28;
+
+// Typography
+
+$font-family-sans-serif: "Asap Condensed", sans-serif;
+$font-family-serif: "Lora", serif;
+$font-size-base: 14px;
+$line-height-base: 1.6;
+$text-color: #393c3d;
+$yellow: #f9d447;
+
+// Navbar
+$navbar-default-bg: #fff;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;

@@ -1,0 +1,222 @@
+/* Manager Drafting Section: Dropdown + Prices */
+/* Player Search Form */
+
+/* MANAGER */
+
+.manager {
+  min-height: 100%;
+  width: 100%;
+  background: white;
+  padding: 30px;
+}
+
+.manager .inner-wrapper {
+  max-width: 450px;
+  margin: 7% auto;
+}
+
+.manager .inner-wrapper h1 {
+  text-align: center;
+  color: #141a1e;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.manager .inner-wrapper img.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.manager .inner-wrapper .fields {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.manager .inner-wrapper .field {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.manager .inner-wrapper .ui.form .field > label {
+  color: lighten($text-color, 20%);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-family: $font-family-sans-serif;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.manager .ui.labeled.input > .label:not(.corner) {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background: $brand-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5833em 1em;
+}
+
+.add-player .ui.form .search .icon {
+  position: absolute;
+  right: 8px;
+  top: 12px;
+  color: #7ebae0;
+}
+
+.find-players {
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.add-player .easy-autocomplete-container {
+  /*background:white;*/
+  background: #0c91ba;
+  font-family: $font-family-sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}
+
+.add-player .easy-autocomplete-container ul,
+.add-player .easy-autocomplete-container li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.add-player .easy-autocomplete-container li {
+  padding: 15px;
+  border-bottom: 1px solid #d4e3e8;
+  color: white;
+  cursor: pointer;
+}
+
+.add-player .easy-autocomplete-container li b {
+  color: #f1c910;
+}
+
+.add-player .ui.form .dropdown select,
+.add-player .ui.form .dropdown .text,
+.add-player .ui.form .dropdown .item {
+  font-family: $font-family-sans-serif;
+  color: #141a1e;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.add-player .ui.form .dropdown {
+  padding: .67857143em 1em;
+}
+
+.manager .button {
+  margin-top: 35px;
+  padding: 13px 15px;
+  font-size: 20px !important;
+  height: 55px;
+}
+
+/* Dropdown Menu */
+
+input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
+  font-family: $font-family-serif;
+  font-size: 18px !important;
+  height: 55px !important;
+}
+
+.rbt-input-hint-container:after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url("../assets/search-icon.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -14px;
+}
+
+.rbt-menu.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  font-family: $font-family-serif;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 5px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: $text-color;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.rbt-menu.dropdown-menu .rbt-highlight-text {
+  color: $brand-primary !important;
+}
+
+.custom-select {
+  margin: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  tap-highlight-color: rgba(255, 255, 255, 0);
+  line-height: 1.35em;
+  padding: 13px 15px;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: .28571429rem;
+  -webkit-box-shadow: 0 0 0 0 transparent inset;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-transition: color .1s ease,border-color .1s ease;
+  -o-transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease,border-color .1s ease;
+}
+
+.manager .rbt-sr-status {
+  display: none;
+}
+
+.manager .search {
+  margin-bottom: 35px;
+}
+
+@media screen and (min-width: 768px) {
+  .manager .inner-wrapper h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .manager .inner-wrapper h1 {
+    font-size: 60px;
+  }
+}
