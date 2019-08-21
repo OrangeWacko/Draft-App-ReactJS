@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+
 ![Image of the Fabtasy Draft App](https://github.com/OrangeWacko/Draft-App-ReactJS/blob/master/public/draft-app-thumb.png)
+
 
 ## Table of Contents
 
