@@ -1,16 +1,17 @@
 import Rebase from 're-base';
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import database from 'firebase/database';
 
 /* Initialize Firebase */
-const config = {
-    apiKey: apikey.process.env.development.local.REACT_APP_API_KEY,
-    authDomain: apikey.process.env.development.local.REACT_APP_DOMAIN,
-    databaseURL: apikey.process.env.development.local.REACT_APP_DB_URL,
-    projectId: apikey.process.env.development.local.REACT_APP_PROJECT_ID,
-    storageBucket: apikey.process.env.development.local.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: apikey.process.env.development.local.REACT_APP_MESSAGE_SENDER_ID,
-    appId: apikey.process.env.development.local.REACT_APP_ID
+console.log(process.env.REACT_APP_FIREBASE_API_KEY);
+const firebaseConfig = {
+  apiKey:process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain:process.env.REACT_APP_FIREBASE_DOMAIN,
+  databaseURL:"https://fantasy-draft-app-reactjs-v2.firebaseio.com",
+  projectId:process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket:process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId:process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID
 };
-const app = firebase.initializeApp(config)
-const Base = Rebase.createClass(app.database())
+const app = firebase.initializeApp(firebaseConfig);
+const Base = Rebase.createClass(app.database());
 export { Base }
