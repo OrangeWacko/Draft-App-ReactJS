@@ -5050,10 +5050,11 @@ th {
 
 .manager .inner-wrapper h1 {
   text-align: center;
-  color: #141a1e;
+  color: #23313a;
   font-family: "Asap Condensed", sans-serif;
   text-transform: uppercase;
-  margin-top: 10px; }
+  margin-top: 10px;
+  letter-spacing: 0.02em; }
 
 .manager .inner-wrapper img.center {
   display: block;
@@ -5127,7 +5128,7 @@ th {
 .add-player .ui.form .dropdown .text,
 .add-player .ui.form .dropdown .item {
   font-family: "Asap Condensed", sans-serif;
-  color: #141a1e;
+  color: #23313a;
   font-weight: 500;
   font-size: 16px; }
 
@@ -5221,10 +5222,6 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
 @media screen and (min-width: 768px) {
   .manager .inner-wrapper h1 {
     font-size: 50px; } }
-
-@media screen and (min-width: 1200px) {
-  .manager .inner-wrapper h1 {
-    font-size: 60px; } }
 
 /*
 

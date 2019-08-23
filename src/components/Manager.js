@@ -15,7 +15,8 @@ export default class Manager extends Component {
 		currentPlayerPos:'',
 		draftedPlayers:[],
 		nflPlayers:[],
-		managers:[]
+		managers:[],
+		errorMessage :''
 	}
 
 
@@ -30,34 +31,41 @@ export default class Manager extends Component {
 			playerId: this.state.currentPlayerId,
 			team: this.state.currentPlayerTeam,
 			position: this.state.currentPlayerPos
-	    }
-	    /* Updating Budget Here */
-	    const currentDrafted = this.state.draftedPlayers;
-	   	const managers = this.state.managers;
-        const managerIndex = managers.findIndex(m => m.managerId == this.state.currentManagerId);
-        console.log(this.state.currentManagerId);
-        const manager = managers[managerIndex];
-        const updatedManager = update(managers[managerIndex], { budget: { $set: manager.budget - this.state.currentBid } });
-        const updatedManagers = update(managers, { $splice: [[managerIndex, 1, updatedManager]] });
+	  }
 
-
-	    console.log('current drafted players: ' + JSON.stringify(currentDrafted));
-	    //this.state.draftedPlayers = updatedDrafted;
-	    this.setState({
-	    	draftedPlayers: [...this.state.draftedPlayers, draftedPlayer],
-	    	managers: updatedManagers,
+		/* Updating Budget Here */
+		const currentDrafted = this.state.draftedPlayers;
+		const managers = this.state.managers;
+		const managerIndex = managers.findIndex(m => m.managerId == this.state.currentManagerId);
+		console.log(this.state.currentManagerId);
+		const manager = managers[managerIndex];
+		//const updatedManager = update(managers[managerIndex], { budget: { $set: manager.budget - this.state.currentBid } });
+		//const updatedManagers = update(managers, { $splice: [[managerIndex, 1, updatedManager]] });
+		if(draftedPlayer.finalBid <= manager.maxBid) {
+			console.log('current drafted players: ' + JSON.stringify(currentDrafted));
+			//this.state.draftedPlayers = updatedDrafted;
+			this.setState({
+			draftedPlayers: [...this.state.draftedPlayers, draftedPlayer],
+			//managers: updatedManagers,
 			currentDisplayName:'',
 			currentBid:0,
 			currentManagerId:0,
 			currentPlayerId:0,
 			currentPlayerTeam:'',
 			currentPlayerPos:'',
+			});
+		}
+		else {
+			console.log('not enough money');
+			this.setState({
+				errorMessage: '<h3 style="color:red; text-align:center;">Not enough money for this bid!</h1>'
+			});
+		}
 
-		});
 		this._typeahead.getInstance().clear();
 
-	    //this.state.draftedPlayers.push(draftedPlayer)
-	    //this.setState({ draftedPlayers: [...previousDraftedPlayers, draftedPlayer]})
+    //this.state.draftedPlayers.push(draftedPlayer)
+    //this.setState({ draftedPlayers: [...previousDraftedPlayers, draftedPlayer]})
 
 	}
 
@@ -119,19 +127,27 @@ export default class Manager extends Component {
 					if(players.length > 0 || players !== 'undefined') {
 						players.map((player, index) => {
 						if(player.managerId == managerID) {
-							totalPrice = totalPrice + player.finalBid;
+							totalPrice = Number(totalPrice) + Number(player.finalBid);
 							specificDraftedPlayers.push(player);
 							}
 						});
 					}
 
-					const totalTeamSize = specificDraftedPlayers.length;
-					const maxBid = 200 - totalPrice - (15 - totalTeamSize);
+					const totalTeamSize = Number(specificDraftedPlayers.length);
+					let maxBid = 0;
+					if(totalTeamSize == 16 ) { maxBid = 0 } else {
+						maxBid = Number(200 - totalPrice - (15 - totalTeamSize));
+					}
+
+					console.log('manager name: ' + manager.managerName);
+					console.log('Total price:' + totalPrice);
+					console.log('Total team size:' + totalTeamSize);
 					console.log('specific drafted players: ' + JSON.stringify(specificDraftedPlayers));
 					console.log('max bid:' + maxBid);
 
 					updatedManager.draftedPlayers = specificDraftedPlayers;
 					updatedManager.maxBid = maxBid;
+					updatedManager.budget = 200 - totalPrice;
 					console.log('updated Manager: ' + JSON.stringify(updatedManager));
 					updatedManagersArray.push(updatedManager);
 				});
@@ -158,6 +174,12 @@ export default class Manager extends Component {
 	    return true;
 	}
 
+	createError = () => {
+		return { __html: this.state.errorMessage};
+	}
+
+
+
 	render() {
 		const currentPlayers = this.state.nflPlayers;
 		//console.log(this.state.drafted);
@@ -169,6 +191,7 @@ export default class Manager extends Component {
 					<div className="ui section divider"></div>
 					<div className="add-player">
 						<div className="ui form">
+							<div dangerouslySetInnerHTML={this.createError()} />
 							<form onSubmit={this.handleSubmit}>
 								<div className="search">
 									<div className="search-players" style={{width: 450}}>

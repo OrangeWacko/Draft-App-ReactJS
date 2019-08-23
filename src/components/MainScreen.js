@@ -20,8 +20,6 @@ export default class MainScreen extends Component {
                 </div>
             </div>
         </div>
-        <a className="back back-right">&rarr;</a>
-        <a className="back back-left">&larr;</a>
     </div>
     );
   }

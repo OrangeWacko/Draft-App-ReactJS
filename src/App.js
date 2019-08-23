@@ -14,11 +14,13 @@ export default class App extends Component {
     draftedPlayers :[]
   }
 
-  componentDidMount() {
-
+  updateManagers = (updatedManagersArray) => {
+    this.setState({
+      managers: updatedManagersArray
+    });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.managersRef = Base.syncState(`teamManagers`, {
       context: this,
       state: 'managers',
@@ -30,6 +32,10 @@ export default class App extends Component {
       state: 'draftedPlayers',
       asArray: true
     });
+  }
+
+  componentWillMount() {
+
   }
 
   componentWillUnmount() {
@@ -44,7 +50,7 @@ export default class App extends Component {
       <Router>
         <div className="container">
           <Route exact path="/" component={MainScreen}/>
-          <Route path="/manager" render={(props) => <Manager {...props} managers={this.state.managers} />} />
+          <Route path="/manager" render={(props) => <Manager {...props} managers={this.state.managers} updateManagers={this.updateManagers} />} />
           <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
           <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} managers={this.state.managers} />}/>
         </div>

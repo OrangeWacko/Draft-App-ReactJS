@@ -17,10 +17,11 @@
 
 .manager .inner-wrapper h1 {
   text-align: center;
-  color: #141a1e;
+  color: $black;
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
   margin-top: 10px;
+  letter-spacing: 0.02em;
 }
 
 .manager .inner-wrapper img.center {
@@ -106,7 +107,7 @@
 .add-player .ui.form .dropdown .text,
 .add-player .ui.form .dropdown .item {
   font-family: $font-family-sans-serif;
-  color: #141a1e;
+  color: $black;
   font-weight: 500;
   font-size: 16px;
 }
@@ -216,7 +217,4 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
 }
 
 @media screen and (min-width: 1200px) {
-  .manager .inner-wrapper h1 {
-    font-size: 60px;
-  }
 }
