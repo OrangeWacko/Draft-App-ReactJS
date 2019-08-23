@@ -3,11 +3,13 @@
 
 .draft-board {
   overflow: hidden;
-  background: url("../assets/draft-bg-white.jpg") #e4e4f0;
+  background: rgba(255, 255, 255, 0);
+  color: #fff;
+  background: url("../assets/draft-bg.jpg") #0d1014;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100%;
-  padding: 30px;
+  padding: 55px 30px 30px 30px;
 }
 
 .grid {}
@@ -62,6 +64,7 @@
   line-height: 1.1em;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: bold;
 }
 
 .current-roster {
@@ -161,7 +164,9 @@
 .single-team {
   max-width: 450px;
   margin: 7% auto;
-  background: $text-color;
+
+  background: rgb(57,60,61);
+  background: linear-gradient(0deg, rgba(57,60,61,1) 0%, rgba(95,105,108,1) 100%);
   border-radius: 5px;
   color: white;
   padding: 20px;
@@ -176,10 +181,11 @@
 
 .single-team h1 {
   text-align: center;
-  color: $brand-primary;
+  color: white;
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
   margin-top: 10px;
+  line-height: 1em;
 }
 
 .single-team h3.blue {
@@ -280,11 +286,8 @@
 }
 
 @media screen and (min-width: 1450px) {
-  .manager-name {
-    font-size: 52px;
-  }
 
   .money-info h4 {
-    font-size: 55px;
+    font-size: 50px;
   }
 }

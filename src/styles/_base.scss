@@ -65,6 +65,39 @@ body {
   overflow-y: scroll;
 }
 
+/* Header nav */
+#root .draft-nav {
+  background: none;
+  padding: 8px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1000;
+  margin-bottom: -50px;
+
+  .home-icon {
+    padding: 5px 2px 1px;
+    margin: 0 4px 0 0;
+    width: 30px;
+  }
+
+  .item {
+    border: none;
+    color: $black;
+    padding: 8px 12px;
+    background: darken(white, 10%);
+
+    &.active {
+      background: $brand-primary;
+      color: white;
+    }
+
+    &.logout {
+      background: none;
+      color: $red;
+    }
+  }
+}
+
 #root {
   position: relative;
   width: 100%;
@@ -135,8 +168,8 @@ button {
   background: rgba(255, 255, 255, 0);
   color: #fff;
   background: url("../assets/draft-bg.jpg") #0d1014;
-  background-size: 150% auto;
-  background-position: 150% 0;
+  background-size: cover;
+  background-position: 100% 0;
   background-repeat: no-repeat;
 }
 
@@ -193,9 +226,10 @@ button {
 .intro-content h1 a > span:first-child {
   font-weight: 700;
   font-size: 16px;
-  letter-spacing: 2px;
-  font-family: $font-family-sans-serif;
+  letter-spacing: 3px;
+  font-family: $font-family-serif;
   text-transform: uppercase;
+  margin-bottom: 0.4em;
 }
 
 .intro-content h1 a > span:nth-child(2) {
@@ -344,7 +378,7 @@ th {
   }
 
   .intro-content h1 a > span:first-child {
-    font-size: 37px;
+    font-size: 38px;
   }
 
   .intro-content h1 a > span:nth-child(2) {
@@ -363,9 +397,6 @@ th {
 }
 
 @media screen and (min-width: 1500px) {
-  .intro-content h1 a > span:first-child {
-    font-size: 55px;
-  }
 
   .grid-item {
     height: 175px;

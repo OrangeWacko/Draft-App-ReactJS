@@ -79,17 +79,17 @@ export default class Manager extends Component {
 
 
 	componentWillMount() {
-
-	}
-
-	componentDidMount() {
 		/*const db = firebase.database().ref('fantasy-draft-2018');
 		const nflPlayersFirebase = db.child('nflPlayers');*/
 		this.managersRef = Base.syncState(`teamManagers`, {
-	      context: this,
-	      state: 'managers',
-	      asArray: true
-	    });
+      context: this,
+      state: 'managers',
+      asArray: true
+    });
+	}
+
+	componentDidMount() {
+
 
 		this.nflPlayersRefs = Base.syncState(`nflPlayers`, {
 		  context: this,
@@ -163,7 +163,7 @@ export default class Manager extends Component {
 	componentWillUnmount() {
 		Base.removeBinding(this.nflPlayersRefs);
 		Base.removeBinding(this.draftedRefs);
-		Base.removeBinding(this.managersRefs);
+		//Base.removeBinding(this.managersRefs);
 	}
 
 	isEmpty = (obj) => {
