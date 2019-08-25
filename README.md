@@ -3,6 +3,8 @@ Live project can be found here: [Create React App](https://github.com/facebookin
 
 ![Image of the Fabtasy Draft App](https://github.com/OrangeWacko/Draft-App-ReactJS/blob/master/public/draft-app-thumb.png)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3837862-688c-43ca-bdfd-07dc8d98b65f/deploy-status)](https://app.netlify.com/sites/fantasy-draft-manager/deploys)
+
 
 ## App for Fantasy Football Live Drafts!
 
