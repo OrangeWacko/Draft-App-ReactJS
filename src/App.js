@@ -38,8 +38,6 @@ export default class App extends Component {
       state: 'managers',
       asArray: true
     });
-
-
     // this.playersRef = Base.syncState(`draftedPlayers`, {
     //   context: this,
     //   state: 'draftedPlayers',
