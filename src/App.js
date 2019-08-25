@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
-import {Base} from './components/Base';
+import {Base, app} from './components/Base';
 import MainScreen from './components/MainScreen';
+import Login from './components/Login';
+import Welcome from './components/Welcome';
 import Manager from './components/Manager';
+import Header from './components/Header';
 import DraftBoard from './components/DraftBoard';
 import SingleTeam from './components/SingleTeam';
 import HouseIcon from './assets/home.svg';
@@ -10,15 +13,23 @@ import './styles/App.css';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 export default class App extends Component {
+
   state = {
     managers: [],
-    draftedPlayers :[]
+    draftedPlayers :[],
+    authenticated: false,
+    user: null
   }
 
   updateManagers = (updatedManagersArray) => {
     this.setState({
       managers: updatedManagersArray
     });
+  }
+
+  updateAuthenticated = (userStatus) => {
+    // this.setState(userStatus)
+    // console.log('user was authenticated')
   }
 
   componentDidMount() {
@@ -28,11 +39,26 @@ export default class App extends Component {
       asArray: true
     });
 
+
     // this.playersRef = Base.syncState(`draftedPlayers`, {
     //   context: this,
     //   state: 'draftedPlayers',
     //   asArray: true
     // });
+
+    this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authenticated: true,
+          user: user.email
+        })
+      } else {
+        this.setState({
+          authenticated: false,
+          user: null
+        })
+      }
+    })
   }
 
   componentWillMount() {
@@ -42,6 +68,7 @@ export default class App extends Component {
   componentWillUnmount() {
     Base.removeBinding(this.managersRef);
     Base.removeBinding(this.playersRef);
+    this.removeAuthListener()
   }
 
   render() {
@@ -49,21 +76,22 @@ export default class App extends Component {
     //console.log(JSON.stringify(drafted));
     return (
       <Router>
-        <div className="container">
-          <div className="draft-nav ui secondary tiny menu">
-            <div className="right menu">
-              <NavLink exact activeClassName='active' to='/' className="home-icon"><img src={HouseIcon} alt="Draft Manager" className="center" width="22"/></NavLink>
-              <NavLink exact activeClassName='active' to='/manager' className="item">Manager</NavLink>
-              <NavLink exact activeClassName='active' to='/draft-board' className="item">Draft Board</NavLink>
-              <a className="item logout" href="#"> Log Out </a>
-            </div>
+        {
+          this.state.authenticated ? (
+          <div className="container logged">
+            <Header />
+            <Route exact path="/" component={MainScreen}/>
+            <Route path="/manager" render={(props) => <Manager {...props} managers={this.state.managers} updateManagers={this.updateManagers} />} />
+            <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
+            <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} managers={this.state.managers} />}/>
           </div>
-
-          <Route exact path="/" component={MainScreen}/>
-          <Route path="/manager" render={(props) => <Manager {...props} managers={this.state.managers} updateManagers={this.updateManagers} />} />
-          <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
-          <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} managers={this.state.managers} />}/>
-        </div>
+          ) : (
+          <div className="container not-logged">
+            <Route exact path="/" component={Welcome}/>
+            <Route path="/login" component={Login}/>
+          </div>
+          )
+        }
       </Router>
     );
   }

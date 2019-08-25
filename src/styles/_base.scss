@@ -386,6 +386,95 @@ th {
   }
 }
 
+/* Log In on Main Screen */
+.login {
+  min-height: 100%;
+  width: 100%;
+  background: white;
+  padding: 30px;
+  background-image: url("../assets/welcome-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  h3 {
+    margin-bottom: 0.8em;
+  }
+}
+
+.login .inner-wrapper {
+  max-width: 700px;
+  margin: 4% auto;
+  color: $black;
+  text-align: center;
+
+  .main-icon {
+    max-width: 410px;
+    margin: 0.5em auto;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h2 {
+    font-family: $font-family-sans-serif;
+  }
+
+  p {
+    font-family: $font-family-serif;
+    font-size: 18px;
+    line-height: 1.45em;
+    small {
+      font-family: $font-family-sans-serif;
+      max-width: 560px;
+      line-height: 1.4em;
+      display: block;
+      margin: 0.5em auto;
+    }
+  }
+
+  form {
+    max-width: 400px;
+    margin: 0.5em auto;
+  }
+
+  .field {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .field > input {
+    font-family: $font-family-serif;
+    font-size: 18px !important;
+    height: 55px !important;
+    margin: 0em;
+    outline: none;
+    -webkit-appearance: none;
+    tap-highlight-color: rgba(255, 255, 255, 0);
+    line-height: 1.21428571em;
+    padding: 0.67857143em 1em;
+    font-size: 1em;
+    background: #FFFFFF;
+    border: 1px solid $black;
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 0.28571429rem;
+    box-shadow: 0em 0em 0em 0em transparent inset;
+    -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+    transition: color 0.1s ease, border-color 0.1s ease;
+  }
+
+  .field > label {
+    color: lighten($text-color, 20%);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-family: $font-family-sans-serif;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+}
+
 @media screen and (min-width: 1400px) {
   .grid-item {
     height: 135px;
@@ -393,6 +482,12 @@ th {
 
   .grid-item.grid-item-width4 h4 {
     font-size: 45px;
+  }
+
+  .login .inner-wrapper {
+    p {
+      font-size: 20px;
+    }
   }
 }
 

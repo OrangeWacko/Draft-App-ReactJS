@@ -1,5 +1,5 @@
 import Rebase from 're-base';
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 import database from 'firebase/database';
 
 /* Initialize Firebase */
@@ -15,5 +15,4 @@ const firebaseConfig = {
 };
 const app = firebase.initializeApp(firebaseConfig)
 const Base = Rebase.createClass(app.database())
-console.log(app);
-export { Base }
+export { app, Base }
