@@ -39,22 +39,24 @@ export default class Manager extends Component {
 		const managerIndex = managers.findIndex(m => m.managerId == this.state.currentManagerId);
 		console.log(this.state.currentManagerId);
 		const manager = managers[managerIndex];
+		console.log('selected manager' + manager);
 		//const updatedManager = update(managers[managerIndex], { budget: { $set: manager.budget - this.state.currentBid } });
 		//const updatedManagers = update(managers, { $splice: [[managerIndex, 1, updatedManager]] });
 		if(draftedPlayer.finalBid <= manager.maxBid) {
 			console.log('current drafted players: ' + JSON.stringify(currentDrafted));
 			//this.state.draftedPlayers = updatedDrafted;
 			this.setState({
-			draftedPlayers: [...this.state.draftedPlayers, draftedPlayer],
-			//managers: updatedManagers,
-			currentDisplayName:'',
-			currentBid:0,
-			currentManagerId:0,
-			currentPlayerId:0,
-			currentPlayerTeam:'',
-			currentPlayerPos:'',
+				draftedPlayers: [...this.state.draftedPlayers, draftedPlayer],
+				//managers: updatedManagers,
+				currentDisplayName:'',
+				currentBid:0,
+				currentManagerId:0,
+				currentPlayerId:0,
+				currentPlayerTeam:'',
+				currentPlayerPos:'',
 			});
 		}
+
 		else {
 			console.log('not enough money');
 			this.setState({
@@ -79,17 +81,15 @@ export default class Manager extends Component {
 
 
 	componentWillMount() {
-		/*const db = firebase.database().ref('fantasy-draft-2018');
-		const nflPlayersFirebase = db.child('nflPlayers');*/
+
+	}
+
+	componentDidMount() {
 		this.managersRef = Base.syncState(`teamManagers`, {
       context: this,
       state: 'managers',
       asArray: true
     });
-	}
-
-	componentDidMount() {
-
 
 		this.nflPlayersRefs = Base.syncState(`nflPlayers`, {
 		  context: this,
@@ -99,7 +99,8 @@ export default class Manager extends Component {
 
 		this.draftedRefs = Base.syncState(`draftedPlayers`, {
 		  context: this,
-		  state: 'draftedPlayers'
+		  state: 'draftedPlayers',
+		  asArray: true
 		});
 
 		Base.listenTo('draftedPlayers', {
@@ -195,7 +196,7 @@ export default class Manager extends Component {
 							<form onSubmit={this.handleSubmit}>
 								<div className="search">
 									<div className="search-players" style={{width: 450}}>
-									<Typeahead onChange={(selected) => {
+									<Typeahead id="nflPlayers" onChange={(selected) => {
 										const currentPlayer = selected[0];
 										if(!this.isEmpty(currentPlayer)) {
 											this.setState({
@@ -227,19 +228,17 @@ export default class Manager extends Component {
 											<option value="1">Andrew Gillman</option>
 											<option value="2">Clayton Brady</option>
 											<option value="3">Cliff Braton</option>
-											<option value="4">Cody Hill</option>
-											<option value="5">Cord Overton</option>
-											<option value="7">Dan Swenson</option>
-											<option value="9">Jaclyn Overton</option>
-											<option value="10">Jessica Brady</option>
-											<option value="11">Matthew Smith</option>
-											<option value="12">Michelle Wolf</option>
-											<option value="13a">Nate Adamson</option>
-											<option value="14">Rachel Bowley</option>
-											<option value="15">Renae meines</option>
-											<option value="8">Roman Serebryakov</option>
-											<option value="16">Wade Thompson</option>
-											<option value="6">Daddy Waggs</option>
+											<option value="4">Cord Overton</option>
+											<option value="5">Dan Swenson</option>
+											<option value="6">Jaclyn Overton</option>
+											<option value="7">John F Kennedy</option>
+											<option value="8">KJ Davaatseren</option>
+											<option value="9">Matt Smith</option>
+											<option value="10">Michelle Krestine</option>
+											<option value="11">Nate Adamson</option>
+											<option value="12">RJ Nay</option>
+											<option value="13">Roman Serebryakov</option>
+											<option value="14">Torrey Johnson</option>
 										</select>
 										</div>
 									<div className="five wide field">

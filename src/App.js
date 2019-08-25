@@ -45,9 +45,10 @@ export default class App extends Component {
     //   state: 'draftedPlayers',
     //   asArray: true
     // });
-
+    const mainEmail = '' + process.env.REACT_APP_MASTER_EMAIL + '';
+    console.log(mainEmail);
     this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
-      if (user) {
+      if (user && user.email === mainEmail) {
         this.setState({
           authenticated: true,
           user: user.email
@@ -81,7 +82,7 @@ export default class App extends Component {
           <div className="container logged">
             <Header />
             <Route exact path="/" component={MainScreen}/>
-            <Route path="/manager" render={(props) => <Manager {...props} managers={this.state.managers} updateManagers={this.updateManagers} />} />
+            <Route path="/manager" render={(props) => <Manager {...props} managers={this.state.managers} />} />
             <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
             <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} managers={this.state.managers} />}/>
           </div>
