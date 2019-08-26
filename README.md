@@ -18,9 +18,10 @@ This is a passion project built on top of ReactJS + Firebase for storing and red
 -  Draft Board: showing live drat results with all teams listed, built with CSS Flexboxes to fill in the space to allow projection on the TV screen
 - Single Team mode: shows current Team manager's drafted players and their Maximum Bid
 
-## Upcoming Features
-- Each logged in User will be allowed to create Manager Teams, The specific Budget and amount of players needed for each team.
-
+## Upcoming Features Cool To Have
+- Each logged in User will be allowed to create Manager Teams: The specific Budget and amount of players needed for each team, Team Name.
+- Invite people by a Draft Token: will let you go to the site, insert Token and see draft board without need to log in with Email/Password
+- Draft by Voice (Alexa). Example: 'FAM, Draft Antonio Brown for 25 Dollars to team Andrew Smith'
 
 ## Something Missing?
 
