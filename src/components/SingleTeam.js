@@ -12,11 +12,11 @@ export default class SingleTeam extends Component {
 
 
 	componentDidMount(){
-		this.managersRef = Base.syncState(`teamManagers`, {
-	      context: this,
-	      state: 'managers',
-	      asArray: true
-	    });
+    this.managersRef = Base.syncState(`teamManagers`, {
+      context: this,
+      state: 'managers',
+      asArray: true
+    });
 	}
 	componentWillUnmount() {
 		Base.removeBinding(this.managersRef);
@@ -63,7 +63,7 @@ export default class SingleTeam extends Component {
         return (
             <div className="draft-board board-wrapper">
 				<div className="ui two column centered grid">
-					<div className="column">
+					<div className="thirteen wide column">
 						<div className="single-team">
 							<h3>{draftedAmount}<strong>/16</strong></h3>
 							<h1>{managerName}</h1>

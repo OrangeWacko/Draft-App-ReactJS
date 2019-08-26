@@ -195,7 +195,7 @@ export default class Manager extends Component {
 							<div dangerouslySetInnerHTML={this.createError()} />
 							<form onSubmit={this.handleSubmit}>
 								<div className="search">
-									<div className="search-players" style={{width: 450}}>
+									<div className="search-players" style={{width: "100%"}}>
 									<Typeahead id="nflPlayers" onChange={(selected) => {
 										const currentPlayer = selected[0];
 										if(!this.isEmpty(currentPlayer)) {
