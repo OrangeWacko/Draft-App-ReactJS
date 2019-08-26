@@ -1,4 +1,4 @@
-Live project can be found here: [Create React App](https://github.com/facebookincubator/create-react-app).
+Live Fantasy App can be found here: [F.A.M.](https://fantasy-draft-manager.netlify.com).
 
 
 ![Image of the Fabtasy Draft App](https://github.com/OrangeWacko/Draft-App-ReactJS/blob/master/public/draft-app-thumb.png)
@@ -8,7 +8,18 @@ Live project can be found here: [Create React App](https://github.com/facebookin
 
 ## App for Fantasy Football Live Drafts!
 
-This is a passion project built on top of ReactJS and Firebase for storing and rednering live draft results, also using Firebase Authentication tokens. 
+Tired of keeping track of your live auction drafts on the Excel spreadsheet? Welcome to free-to-enjoy NFL Fantasy Auction Manager platform for anyone who wants to manage their live drafts for their league.
+
+This is a passion project built on top of ReactJS + Firebase for storing and rednering live draft results, also using Firebase Authentication tokens for User creation and management. 
+
+## Features
+- User Registration/Login with Email
+- Manager Mode: drafting Players with final bids assigned to specific Manager's Team
+-  Draft Board: showing live drat results with all teams listed, built with CSS Flexboxes to fill in the space to allow projection on the TV screen
+- Single Team mode: shows current Team manager's drafted players and their Maximum Bid
+
+## Upcoming Features
+- Each logged in User will be allowed to create Manager Teams, The specific Budget and amount of players needed for each team.
 
 
 ## Something Missing?
