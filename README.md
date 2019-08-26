@@ -1,4 +1,4 @@
-Live Fantasy App can be found here: [F.A.M.](https://fantasy-draft-manager.netlify.com).
+Live Fantasy App can be found here: [F.A.M.](https://fantasy-draft-manager.netlify.com)
 
 
 ![Image of the Fabtasy Draft App](https://github.com/OrangeWacko/Draft-App-ReactJS/blob/master/public/draft-app-thumb.png)
