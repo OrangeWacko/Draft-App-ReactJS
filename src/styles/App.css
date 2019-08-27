@@ -31123,7 +31123,7 @@ button {
   margin: 0 auto;
   text-align: center; }
   .profile img {
-    max-width: 160px; }
+    max-width: 115px; }
   @media screen and (min-width: 768px) {
     .profile {
       max-width: 70%;
@@ -31364,10 +31364,16 @@ th {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100%;
-  padding: 55px 30px 30px 30px; }
+  padding: 55px 0 20px 0; }
+  @media screen and (min-width: 768px) {
+    .draft-board {
+      padding: 55px 15px 20px 15px; } }
 
 .board-wrapper .column {
   padding: 10px !important; }
+
+.board-wrapper .column.sixteen {
+  padding: 15px 30px !important; }
 
 .grid-item {
   font-family: "Asap Condensed", sans-serif;

@@ -9,7 +9,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100%;
-  padding: 55px 30px 30px 30px;
+  padding: 55px 0 20px 0;
+
+  @media screen and (min-width:768px) {
+    padding: 55px 15px 20px 15px;
+  }
 }
 
 .grid {}
@@ -17,6 +21,10 @@
 .board-wrapper {
   .column {
     padding: 10px!important;
+  }
+
+  .column.sixteen {
+    padding: 15px 30px!important;
   }
 }
 

@@ -5,20 +5,22 @@ import update from 'react-addons-update';
 
 export default class SingleTeam extends Component {
 
-	state = {
-		managers: [{"managerId":0}]
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      managers: [{"managerId":0}]
+    }
+  }
 
-
-
-	componentDidMount(){
+  componentDidMount() {
     this.managersRef = Base.syncState(`teamManagers`, {
       context: this,
       state: 'managers',
       asArray: true
     });
 	}
-	componentWillUnmount() {
+
+  componentWillUnmount() {
 		Base.removeBinding(this.managersRef);
 	}
   render() {
@@ -63,7 +65,7 @@ export default class SingleTeam extends Component {
         return (
             <div className="draft-board board-wrapper">
 				<div className="ui two column centered grid">
-					<div className="thirteen wide column">
+					<div className="sixteen wide column">
 						<div className="single-team">
 							<h3>{draftedAmount}<strong>/16</strong></h3>
 							<h1>{managerName}</h1>

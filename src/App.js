@@ -14,18 +14,23 @@ import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 export default class App extends Component {
 
-  state = {
-    managers: [],
-    draftedPlayers :[],
-    authenticated: false,
-    user: null
+  constructor(props) {
+    super(props);
+    this.state = {
+      managers: [],
+      draftedPlayers :[],
+      authenticated: false,
+      user: null
+    }
   }
 
-  updateManagers = (updatedManagersArray) => {
-    this.setState({
-      managers: updatedManagersArray
-    });
-  }
+
+
+  // updateManagers = (updatedManagersArray) => {
+  //   this.setState({
+  //     managers: updatedManagersArray
+  //   });
+  // }
 
   updateAuthenticated = (userStatus) => {
     // this.setState(userStatus)
@@ -80,9 +85,9 @@ export default class App extends Component {
           <div className="container logged">
             <Header />
             <Route exact path="/" component={MainScreen}/>
-            <Route path="/manager" render={(props) => <Manager {...props} managers={this.state.managers} />} />
+            <Route path="/manager" render={(props) => <Manager {...props} />} />
             <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
-            <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} managers={this.state.managers} />}/>
+            <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} />}/>
           </div>
           ) : (
           <div className="container not-logged">
