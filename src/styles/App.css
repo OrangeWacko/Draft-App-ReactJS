@@ -30992,11 +30992,18 @@ body {
     padding: 5px 2px 1px;
     margin: 0 4px 0 0;
     width: 30px; }
+    @media screen and (max-width: 768px) {
+      #root .draft-nav .home-icon {
+        display: none; } }
   #root .draft-nav .item {
     border: none;
     color: #23313a;
     padding: 8px 12px;
     background: #e6e6e6; }
+    @media screen and (max-width: 768px) {
+      #root .draft-nav .item {
+        padding: 8px 7px;
+        font-size: 11px; } }
     #root .draft-nav .item.active {
       background: #10a6d6;
       color: white; }
@@ -31571,12 +31578,12 @@ th {
 /* Manager Drafting Section: Dropdown + Prices */
 /* Player Search Form */
 /* MANAGER */
-.manager {
+.manager, .drafted-players {
   min-height: 100%;
   width: 100%;
   background: white;
   padding: 30px; }
-  .manager h3 {
+  .manager h3, .drafted-players h3 {
     margin-bottom: 0.8em; }
 
 .manager .inner-wrapper {
@@ -31753,6 +31760,30 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
 
 .manager .search {
   margin-bottom: 35px; }
+
+/* Drafted Players */
+#root .drafted-players {
+  padding-top: 70px; }
+  @media screen and (max-width: 767px) {
+    #root .drafted-players {
+      padding-right: 20px;
+      padding-left: 20px; } }
+  #root .drafted-players .board-wrapper .column.single-player {
+    background: #c7eefb;
+    border-radius: 4px;
+    color: #23313a;
+    font-size: 16px;
+    margin: 10px !important; }
+    #root .drafted-players .board-wrapper .column.single-player .ui.grid {
+      padding: 10px 20px; }
+    #root .drafted-players .board-wrapper .column.single-player span {
+      font-family: "Asap Condensed", sans-serif;
+      color: #6a8ea5; }
+    @media screen and (max-width: 767px) {
+      #root .drafted-players .board-wrapper .column.single-player {
+        margin: 5px 0 !important; }
+        #root .drafted-players .board-wrapper .column.single-player .ui.grid {
+          padding: 0; } }
 
 @media screen and (min-width: 768px) {
   .manager .inner-wrapper h1 {

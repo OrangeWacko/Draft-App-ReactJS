@@ -8,6 +8,7 @@ import Manager from './components/Manager';
 import Header from './components/Header';
 import DraftBoard from './components/DraftBoard';
 import SingleTeam from './components/SingleTeam';
+import DraftedPlayers from './components/DraftedPlayers';
 import HouseIcon from './assets/home.svg';
 import './styles/App.css';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
@@ -88,6 +89,7 @@ export default class App extends Component {
             <Route path="/manager" render={(props) => <Manager {...props} />} />
             <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
             <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} />}/>
+            <Route path="/drafted-players" component={DraftedPlayers}/>
           </div>
           ) : (
           <div className="container not-logged">

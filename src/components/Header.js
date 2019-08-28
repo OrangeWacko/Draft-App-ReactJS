@@ -35,6 +35,7 @@ export default class DraftBoard extends Component {
             <NavLink exact activeClassName='active' to='/' className="home-icon"><img src={HouseIcon} alt="Draft Manager" className="center" width="22"/></NavLink>
             <NavLink exact activeClassName='active' to='/manager' className="item">Manager</NavLink>
             <NavLink exact activeClassName='active' to='/draft-board' className="item">Draft Board</NavLink>
+            <NavLink exact activeClassName='active' to='/drafted-players' className="item">Drafted</NavLink>
             <button className="item logout" onClick={this.logOut} >Log Out</button>
           </div>
         </div>

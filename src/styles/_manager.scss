@@ -3,7 +3,7 @@
 
 /* MANAGER */
 
-.manager {
+.manager, .drafted-players {
   min-height: 100%;
   width: 100%;
   background: white;
@@ -212,6 +212,45 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
 
 .manager .search {
   margin-bottom: 35px;
+}
+
+/* Drafted Players */
+#root .drafted-players
+{
+  padding-top: 70px;
+
+  @media screen and (max-width: 767px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .board-wrapper {
+    .column.single-player {
+      background: lighten($brand-primary, 43%);
+      border-radius: 4px;
+      color: $black;
+      font-size: 16px;
+      margin: 10px!important;
+
+      .ui.grid {
+        padding: 10px 20px;
+      }
+
+      span {
+        font-family: $font-family-sans-serif;
+        color: lighten($black, 35%);
+      }
+
+      @media screen and (max-width: 767px) {
+        margin: 5px 0!important;
+
+        .ui.grid {
+          padding: 0;
+        }
+      }
+    }
+  }
+
 }
 
 @media screen and (min-width: 768px) {

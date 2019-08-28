@@ -78,6 +78,9 @@ body {
     padding: 5px 2px 1px;
     margin: 0 4px 0 0;
     width: 30px;
+    @media screen and (max-width:768px) {
+      display: none;
+    }
   }
 
   .item {
@@ -85,6 +88,10 @@ body {
     color: $black;
     padding: 8px 12px;
     background: darken(white, 10%);
+    @media screen and (max-width:768px) {
+      padding: 8px 7px;
+      font-size: 11px;
+    }
 
     &.active {
       background: $brand-primary;
