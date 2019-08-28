@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Base, app} from './Base';
+import {app} from './Base';
 import { NavLink, Redirect } from 'react-router-dom';
 import HouseIcon from '../assets/home.svg';
 
@@ -26,8 +26,6 @@ export default class DraftBoard extends Component {
     }
 
     render() {
-      const Managers  = this.props.managers;
-      //console.log(JSON.stringify(Managers))
       return (
         <div className="draft-nav ui secondary tiny menu">
           {this.renderRedirect()}

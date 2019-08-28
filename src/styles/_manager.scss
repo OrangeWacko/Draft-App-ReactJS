@@ -226,14 +226,18 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
 
   .board-wrapper {
     .column.single-player {
-      background: lighten($brand-primary, 43%);
-      border-radius: 4px;
+
+
       color: $black;
       font-size: 16px;
-      margin: 10px!important;
+      margin: 5px 0!important;
+      padding: 0 10px!important;
 
       .ui.grid {
-        padding: 10px 20px;
+        padding: 7px;
+        margin: 4px;
+        background: lighten($brand-primary, 43%);
+        border-radius: 3px;
       }
 
       span {
@@ -245,7 +249,7 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
         margin: 5px 0!important;
 
         .ui.grid {
-          padding: 0;
+          padding: 4px;
         }
       }
     }

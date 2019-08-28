@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {Base} from './Base';
-import update from 'react-addons-update';
 
 export default class SingleTeam extends Component {
 

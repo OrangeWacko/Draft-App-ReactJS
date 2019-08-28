@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {Base, app} from './components/Base';
 import MainScreen from './components/MainScreen';
 import Login from './components/Login';
@@ -9,7 +9,6 @@ import Header from './components/Header';
 import DraftBoard from './components/DraftBoard';
 import SingleTeam from './components/SingleTeam';
 import DraftedPlayers from './components/DraftedPlayers';
-import HouseIcon from './assets/home.svg';
 import './styles/App.css';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 

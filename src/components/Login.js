@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {app} from './Base';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import MainIcon from '../assets/main-icon.svg';
+import { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
 

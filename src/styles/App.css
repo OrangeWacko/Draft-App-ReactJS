@@ -31769,13 +31769,15 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
       padding-right: 20px;
       padding-left: 20px; } }
   #root .drafted-players .board-wrapper .column.single-player {
-    background: #c7eefb;
-    border-radius: 4px;
     color: #23313a;
     font-size: 16px;
-    margin: 10px !important; }
+    margin: 5px 0 !important;
+    padding: 0 10px !important; }
     #root .drafted-players .board-wrapper .column.single-player .ui.grid {
-      padding: 10px 20px; }
+      padding: 7px;
+      margin: 4px;
+      background: #c7eefb;
+      border-radius: 3px; }
     #root .drafted-players .board-wrapper .column.single-player span {
       font-family: "Asap Condensed", sans-serif;
       color: #6a8ea5; }
@@ -31783,7 +31785,7 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
       #root .drafted-players .board-wrapper .column.single-player {
         margin: 5px 0 !important; }
         #root .drafted-players .board-wrapper .column.single-player .ui.grid {
-          padding: 0; } }
+          padding: 4px; } }
 
 @media screen and (min-width: 768px) {
   .manager .inner-wrapper h1 {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import MainIcon from '../assets/main-icon.svg';
+import { Link } from 'react-router-dom';
 import Lottie from 'react-lottie'
 import animationData from '../assets/Animation.json'
 

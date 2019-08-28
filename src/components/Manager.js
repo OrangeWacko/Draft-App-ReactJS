@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ManagerIcon from '../assets/trainer.svg';
 import {Base} from './Base';
 import {Typeahead} from 'react-bootstrap-typeahead';
-import update from 'react-addons-update';
 
 
 export default class Manager extends Component {
@@ -26,7 +25,7 @@ export default class Manager extends Component {
 		//const previousDraftedPlayers = this.state.draftedPlayers
 		const draftedPlayer = {
 			displayName: this.state.currentDisplayName,
-			finalBid: this.state.currentBid,
+			finalBid: Number(this.state.currentBid),
 			managerId: this.state.currentManagerId,
 			playerId: this.state.currentPlayerId,
 			team: this.state.currentPlayerTeam,
@@ -131,6 +130,7 @@ export default class Manager extends Component {
 							totalPrice = Number(totalPrice) + Number(player.finalBid);
 							specificDraftedPlayers.push(player);
 							}
+							return null;
 						});
 					}
 
@@ -151,6 +151,7 @@ export default class Manager extends Component {
 					updatedManager.budget = 200 - totalPrice;
 					console.log('updated Manager: ' + JSON.stringify(updatedManager));
 					updatedManagersArray.push(updatedManager);
+					return null;
 				});
 
 				this.setState({
