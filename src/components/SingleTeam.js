@@ -28,13 +28,13 @@ export default class SingleTeam extends Component {
 
   		//const { managers = [] } = this.props.managers;
         const teamId = this.props.match.params.teamId;
-        console.log('team ID here:' + teamId);
+        //console.log('team ID here:' + teamId);
 
-        console.log('managers:' + JSON.stringify(managers));
+        //console.log('managers:' + JSON.stringify(managers));
         let managerIndex = managers.findIndex(m => m.managerId == teamId);
-        console.log(managerIndex);
+        //console.log(managerIndex);
         let Manager = managers[managerIndex];
-        console.log('manager: ' + JSON.stringify(Manager));
+        //console.log('manager: ' + JSON.stringify(Manager));
         let managerName ='';
         let draftedAmount =0;
         let budget =200;
@@ -62,25 +62,25 @@ export default class SingleTeam extends Component {
     	}
 
         return (
-            <div className="draft-board board-wrapper">
-				<div className="ui two column centered grid">
-					<div className="sixteen wide column">
-						<div className="single-team">
-							<h3>{draftedAmount}<strong>/16</strong></h3>
-							<h1>{managerName}</h1>
-							<ul className="team-players">
-							{playersList}
-							</ul>
-							<div>
-								<h3>Budget: <sup>$</sup><strong>{budget}</strong></h3>
-								<h3 className="max-bid">Max Bid: <sup>$</sup><strong>{maxBid}</strong>
-								</h3>
-							</div>
-							<Link to="/draft-board"><button className="fluid ui green button">Back to Full Draft Board</button></Link>
-						</div>
-					</div>
-				</div>
-            </div>
+        <div className="draft-board board-wrapper">
+  				<div className="ui two column centered grid">
+  					<div className="sixteen wide column">
+  						<div className="single-team">
+  							<h3>{draftedAmount}<strong>/16</strong></h3>
+  							<h1>{managerName}</h1>
+  							<ul className="team-players">
+  							{playersList}
+  							</ul>
+  							<div>
+  								<h3>Budget: <sup>$</sup><strong>{budget}</strong></h3>
+  								<h3 className="max-bid">Max Bid: <sup>$</sup><strong>{maxBid}</strong>
+  								</h3>
+  							</div>
+  							<Link to="/draft-board"><button className="fluid ui green button">Back to Full Draft Board</button></Link>
+  						</div>
+  					</div>
+  				</div>
+        </div>
         );
     }
 }

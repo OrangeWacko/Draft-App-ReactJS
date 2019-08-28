@@ -10,7 +10,7 @@ export default class DraftBoard extends Component {
     }
 
     logOut = () => {
-      console.log('clicking');
+      //console.log('clicking');
 
       app.auth().signOut()
       this.setState ({

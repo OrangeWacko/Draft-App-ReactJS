@@ -49,7 +49,7 @@ export default class App extends Component {
     //   asArray: true
     // });
     const mainEmail = '' + process.env.REACT_APP_MASTER_EMAIL + '';
-    console.log(mainEmail);
+    //console.log(mainEmail);
     this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
       if (user && user.email === mainEmail) {
         this.setState({

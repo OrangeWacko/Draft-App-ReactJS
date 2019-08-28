@@ -36,13 +36,13 @@ export default class Manager extends Component {
 		const currentDrafted = this.state.draftedPlayers;
 		const managers = this.state.managers;
 		const managerIndex = managers.findIndex(m => m.managerId == this.state.currentManagerId);
-		console.log(this.state.currentManagerId);
+		//console.log(this.state.currentManagerId);
 		const manager = managers[managerIndex];
-		console.log('selected manager' + manager);
+		//console.log('selected manager' + manager);
 		//const updatedManager = update(managers[managerIndex], { budget: { $set: manager.budget - this.state.currentBid } });
 		//const updatedManagers = update(managers, { $splice: [[managerIndex, 1, updatedManager]] });
 		if(draftedPlayer.finalBid <= manager.maxBid) {
-			console.log('current drafted players: ' + JSON.stringify(currentDrafted));
+			//console.log('current drafted players: ' + JSON.stringify(currentDrafted));
 			//this.state.draftedPlayers = updatedDrafted;
 			this.setState({
 				draftedPlayers: [...this.state.draftedPlayers, draftedPlayer],
@@ -57,7 +57,7 @@ export default class Manager extends Component {
 		}
 
 		else {
-			console.log('not enough money');
+			//console.log('not enough money');
 			this.setState({
 				errorMessage: '<h3 style="color:red; text-align:center;">Not enough money for this bid!</h1>'
 			});
@@ -110,7 +110,7 @@ export default class Manager extends Component {
 				// console.log(this.state.currentManagerId);
 				// const manager = managers[managerIndex];
 
-				console.log('player added');
+				//console.log('player added');
 				const managersArray = this.state.managers;
 				const draftedPlayersArray = this.state.draftedPlayers;
 
@@ -122,8 +122,8 @@ export default class Manager extends Component {
 					let specificDraftedPlayers = [];
 					let totalPrice = 0;
 					const managerID = manager.managerId;
-					console.log('current manager:' + JSON.stringify(manager) + ' manager id: ' + managerID);
-					console.log('length array: ' + draftedPlayersArray.length);
+					// console.log('current manager:' + JSON.stringify(manager) + ' manager id: ' + managerID);
+					// console.log('length array: ' + draftedPlayersArray.length);
 					if(players.length > 0 || players !== 'undefined') {
 						players.map((player, index) => {
 						if(player.managerId == managerID) {
@@ -140,16 +140,16 @@ export default class Manager extends Component {
 						maxBid = Number(200 - totalPrice - (15 - totalTeamSize));
 					}
 
-					console.log('manager name: ' + manager.managerName);
-					console.log('Total price:' + totalPrice);
-					console.log('Total team size:' + totalTeamSize);
-					console.log('specific drafted players: ' + JSON.stringify(specificDraftedPlayers));
-					console.log('max bid:' + maxBid);
+					// console.log('manager name: ' + manager.managerName);
+					// console.log('Total price:' + totalPrice);
+					// console.log('Total team size:' + totalTeamSize);
+					// console.log('specific drafted players: ' + JSON.stringify(specificDraftedPlayers));
+					// console.log('max bid:' + maxBid);
 
 					updatedManager.draftedPlayers = specificDraftedPlayers;
 					updatedManager.maxBid = maxBid;
 					updatedManager.budget = 200 - totalPrice;
-					console.log('updated Manager: ' + JSON.stringify(updatedManager));
+					//console.log('updated Manager: ' + JSON.stringify(updatedManager));
 					updatedManagersArray.push(updatedManager);
 					return null;
 				});

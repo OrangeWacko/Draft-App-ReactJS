@@ -3,7 +3,6 @@ import firebase from 'firebase';
 import database from 'firebase/database';
 
 /* Initialize Firebase */
-console.log(process.env.REACT_APP_DATABASE_URL);
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_DOMAIN,

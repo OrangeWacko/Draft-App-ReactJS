@@ -13,10 +13,10 @@ export default class Login extends Component {
     const email = this.emailField.value
     const password = this.passwordField.value
 
-    console.table([{
-      email: this.emailField.value,
-      password: this.passwordField.value
-    }]);
+    // console.table([{
+    //   email: this.emailField.value,
+    //   password: this.passwordField.value
+    // }]);
 
     app.auth().fetchSignInMethodsForEmail(email)
     .then((providers) => {
