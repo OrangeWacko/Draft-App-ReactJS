@@ -48,10 +48,9 @@ export default class App extends Component {
     //   state: 'draftedPlayers',
     //   asArray: true
     // });
-    const mainEmail = '' + process.env.REACT_APP_MASTER_EMAIL + '';
     //console.log(mainEmail);
     this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
-      if (user && user.email === mainEmail) {
+      if (user) {
         this.setState({
           authenticated: true,
           user: user.email

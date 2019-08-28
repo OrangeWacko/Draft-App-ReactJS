@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url(~@blueprintjs/core/lib/css/blueprint.css);
+@import url(~@blueprintjs/icons/lib/css/blueprint-icons.css);
 /*
  * # Semantic UI - 2.4.2
  * https://github.com/Semantic-Org/Semantic-UI
@@ -30980,6 +30982,12 @@ html {
 body {
   overflow-y: scroll; }
 
+/* BluePrintJS */
+.bp3-portal {
+  z-index: 100; }
+  .bp3-portal .bp3-menu-item {
+    font-size: 14px; }
+
 /* Header nav */
 #root .draft-nav {
   background: none;
@@ -30995,6 +31003,12 @@ body {
     @media screen and (max-width: 768px) {
       #root .draft-nav .home-icon {
         display: none; } }
+  #root .draft-nav .bp3-button-group a[role="button"] {
+    box-shadow: none;
+    background: #e6e6e6; }
+  #root .draft-nav .bp3-button-group a[role="button"]:first-child {
+    border-right: 1px solid #d9d9d9;
+    margin-right: 0; }
   #root .draft-nav .item {
     border: none;
     color: #23313a;
@@ -31296,6 +31310,8 @@ th {
   .login .inner-wrapper .main-icon {
     max-width: 410px;
     margin: 0.5em auto; }
+    .login .inner-wrapper .main-icon div[aria-label="animation"] {
+      max-width: 98% !important; }
   .login .inner-wrapper img {
     max-width: 100%; }
   .login .inner-wrapper h2 {

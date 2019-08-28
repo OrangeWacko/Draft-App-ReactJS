@@ -65,6 +65,16 @@ body {
   overflow-y: scroll;
 }
 
+/* BluePrintJS */
+
+.bp3-portal {
+  z-index: 100;
+
+  .bp3-menu-item {
+    font-size: 14px;
+  }
+}
+
 /* Header nav */
 #root .draft-nav {
   background: none;
@@ -76,10 +86,23 @@ body {
 
   .home-icon {
     padding: 5px 2px 1px;
-    margin: 0 4px 0 0;
+    margin: 6px 10px;
     width: 30px;
     @media screen and (max-width:768px) {
       display: none;
+    }
+  }
+
+
+  .bp3-button-group {
+    a[role="button"] {
+      box-shadow:none;
+      background: darken(white, 10%);
+    }
+
+    a[role="button"]:first-child {
+      border-right: 1px solid darken(white, 15%);
+      margin-right:0;
     }
   }
 
