@@ -454,6 +454,10 @@ th {
   .main-icon {
     max-width: 410px;
     margin: 0.5em auto;
+
+    div[aria-label="animation"] {
+      max-width: 98%!important;
+    }
   }
 
   img {
