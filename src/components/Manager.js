@@ -7,7 +7,7 @@ import {Typeahead} from 'react-bootstrap-typeahead';
 export default class Manager extends Component {
 	state = {
 		currentDisplayName:'',
-		currentBid:0,
+		currentBid:null,
 		currentManagerId:0,
 		currentPlayerId:0,
 		currentPlayerTeam:'',
@@ -48,7 +48,7 @@ export default class Manager extends Component {
 				draftedPlayers: [...this.state.draftedPlayers, draftedPlayer],
 				//managers: updatedManagers,
 				currentDisplayName:'',
-				currentBid:0,
+				currentBid:null,
 				currentManagerId:0,
 				currentPlayerId:0,
 				currentPlayerTeam:'',
