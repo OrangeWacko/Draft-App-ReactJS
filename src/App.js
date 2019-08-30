@@ -5,6 +5,7 @@ import MainScreen from './components/MainScreen';
 import Login from './components/Login';
 import Welcome from './components/Welcome';
 import Manager from './components/Manager';
+import TeamsManager from './components/TeamsManager';
 import Header from './components/Header';
 import DraftBoard from './components/DraftBoard';
 import SingleTeam from './components/SingleTeam';
@@ -85,6 +86,7 @@ export default class App extends Component {
             <Header />
             <Route exact path="/" component={MainScreen}/>
             <Route path="/manager" render={(props) => <Manager {...props} />} />
+            <Route path="/manage-teams" render={(props) => <TeamsManager {...props} />} />
             <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
             <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} />}/>
             <Route path="/drafted-players" component={DraftedPlayers}/>

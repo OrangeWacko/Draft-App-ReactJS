@@ -30991,24 +30991,27 @@ body {
 /* Header nav */
 #root .draft-nav {
   background: none;
-  padding: 8px;
+  padding: 6px 8px 8px;
   margin-bottom: 0;
   position: relative;
   z-index: 1000;
-  margin-bottom: -50px; }
+  margin-bottom: -60px; }
   #root .draft-nav .home-icon {
     padding: 5px 2px 1px;
-    margin: 0 4px 0 0;
+    margin: 6px 10px;
     width: 30px; }
     @media screen and (max-width: 768px) {
       #root .draft-nav .home-icon {
         display: none; } }
-  #root .draft-nav .bp3-button-group a[role="button"] {
-    box-shadow: none;
-    background: #e6e6e6; }
-  #root .draft-nav .bp3-button-group a[role="button"]:first-child {
-    border-right: 1px solid #d9d9d9;
-    margin-right: 0; }
+  #root .draft-nav .bp3-button-group {
+    height: 38px;
+    margin-top: 4px; }
+    #root .draft-nav .bp3-button-group a[role="button"] {
+      box-shadow: none;
+      background: #e6e6e6; }
+    #root .draft-nav .bp3-button-group a[role="button"]:first-child {
+      border-right: 1px solid #d9d9d9;
+      margin-right: 0; }
   #root .draft-nav .item {
     border: none;
     color: #23313a;

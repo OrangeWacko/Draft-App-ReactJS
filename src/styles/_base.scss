@@ -78,11 +78,11 @@ body {
 /* Header nav */
 #root .draft-nav {
   background: none;
-  padding: 8px;
+  padding: 6px 8px 8px;
   margin-bottom: 0;
   position: relative;
   z-index: 1000;
-  margin-bottom: -50px;
+  margin-bottom: -60px;
 
   .home-icon {
     padding: 5px 2px 1px;
@@ -95,6 +95,9 @@ body {
 
 
   .bp3-button-group {
+    height: 38px;
+    margin-top: 4px;
+
     a[role="button"] {
       box-shadow:none;
       background: darken(white, 10%);

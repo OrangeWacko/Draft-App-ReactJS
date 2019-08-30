@@ -7,7 +7,7 @@ import {Typeahead} from 'react-bootstrap-typeahead';
 export default class Manager extends Component {
 	state = {
 		currentDisplayName:'',
-		currentBid:0,
+		currentBid:null,
 		currentManagerId:0,
 		currentPlayerId:0,
 		currentPlayerTeam:'',
@@ -48,7 +48,7 @@ export default class Manager extends Component {
 				draftedPlayers: [...this.state.draftedPlayers, draftedPlayer],
 				//managers: updatedManagers,
 				currentDisplayName:'',
-				currentBid:0,
+				currentBid:null,
 				currentManagerId:0,
 				currentPlayerId:0,
 				currentPlayerTeam:'',
@@ -75,6 +75,11 @@ export default class Manager extends Component {
 		this.setState({
 			[e.target.name]: e.target.value
 		});
+	}
+
+	clearField = (e) => {
+		e.preventDefault()
+		
 	}
 
 
@@ -245,7 +250,7 @@ export default class Manager extends Component {
 									<div className="five wide field">
 										<label>Winning Bid</label>
 										<div className="ui right labeled input">
-											<input type="text" placeholder="100" name="currentBid" value={this.state.currentBid} onChange={this.handleChange} />
+											<input ref={input=>{this.priceField = input}} type="number" name="currentBid" value={this.state.currentBid} onBlur={this.clearField} onChange={this.handleChange} />
 										 	<label className="ui label">$</label>
 										</div>
 									</div>

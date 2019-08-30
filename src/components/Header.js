@@ -18,8 +18,7 @@ export default class DraftBoard extends Component {
         redirect: true
       })
     }
-
-
+    
     renderRedirect = () => {
       if (this.state.redirect) {
         return <Redirect to='/' />
@@ -29,8 +28,8 @@ export default class DraftBoard extends Component {
     render() {
       const managerMenu = (
         <Menu>
-            <MenuItem text="Auction Manager" href="/manager"/>
-            <MenuItem text="Manage Teams" href="/manage-teams"/>
+            <MenuItem text="Auction" href="/manager"/>
+            <MenuItem text="Teams" href="/manage-teams"/>
         </Menu>
       );
 
