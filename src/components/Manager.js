@@ -245,7 +245,7 @@ export default class Manager extends Component {
 									<div className="five wide field">
 										<label>Winning Bid</label>
 										<div className="ui right labeled input">
-											<input type="text" placeholder="100" name="currentBid" value={this.state.currentBid} onChange={this.handleChange} />
+											<input type="number" name="currentBid" value={this.state.currentBid} onChange={this.handleChange} />
 										 	<label className="ui label">$</label>
 										</div>
 									</div>
