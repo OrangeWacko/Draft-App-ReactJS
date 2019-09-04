@@ -17,6 +17,7 @@ export default class Manager extends Component {
     errorMessage: ""
   };
 
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -88,6 +89,7 @@ export default class Manager extends Component {
   componentWillMount() {}
 
   componentDidMount() {
+    
     this.managersRef = Base.syncState(`teamManagers`, {
       context: this,
       state: "managers",
@@ -140,10 +142,11 @@ export default class Manager extends Component {
 
           const totalTeamSize = Number(specificDraftedPlayers.length);
           let maxBid = 0;
+          const currentBudget = Number(manager.budget);
           if (totalTeamSize == 16) {
             maxBid = 0;
           } else {
-            maxBid = Number(200 - totalPrice - (15 - totalTeamSize));
+            maxBid = Number(currentBudget - totalPrice - (15 - totalTeamSize));
           }
 
           // console.log('manager name: ' + manager.managerName);
@@ -154,7 +157,8 @@ export default class Manager extends Component {
 
           updatedManager.draftedPlayers = specificDraftedPlayers;
           updatedManager.maxBid = maxBid;
-          updatedManager.budget = 200 - totalPrice;
+          
+          //updatedManager.budget = currentBudget - totalPrice;
           //console.log('updated Manager: ' + JSON.stringify(updatedManager));
           updatedManagersArray.push(updatedManager);
           return null;

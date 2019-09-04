@@ -16,12 +16,13 @@ export default class DraftBoard extends Component {
                 {Managers.map((manager) => {
                     const drafted = manager.draftedPlayers;
                     let totalTeamSize = 0;
+                    let budgetAmt = 0;
                     //console.log('current drafted players from draft board:' + JSON.stringify(totalTeamSize));
                     if (typeof(drafted) !== 'undefined' || drafted != null) {
                         totalTeamSize = drafted.length;
-                    } else {
-
-                    }
+                       
+                    } else {}
+                    budgetAmt = (Number(manager.maxBid) + (16 - totalTeamSize) - 1 );
                     return(
                     <div className="column " key={manager.managerId}>
                         <Link to={`team/${manager.managerId}`}>
@@ -32,7 +33,7 @@ export default class DraftBoard extends Component {
                                 <div className="money-info six wide column">
                                     <div className="budget">
                                         <h3>Budget:</h3>
-                                        <h4><sup>$</sup>{manager.budget}</h4>
+                                        <h4><sup>$</sup>{budgetAmt}</h4>
                                     </div>
                                     <div className="bid">
                                         <h3>Max Bix:</h3>

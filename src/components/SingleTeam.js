@@ -37,8 +37,8 @@ export default class SingleTeam extends Component {
         //console.log('manager: ' + JSON.stringify(Manager));
         let managerName ='';
         let draftedAmount =0;
-        let budget =200;
-        let maxBid =185;
+        let budget = 0;
+        let maxBid = 185;
         let draftedPlayers=[];
         let playersList = '';
         if(managers.length > 1)
@@ -46,9 +46,9 @@ export default class SingleTeam extends Component {
         	managerName = Manager.managerName;
         	if(Manager.draftedPlayers) {
         		draftedPlayers = Manager.draftedPlayers;
-        	}
-
-        	budget = Manager.budget;
+			}
+			const totalTeamSize = draftedPlayers.length;
+			budget = (Number(Manager.maxBid) + (16 - totalTeamSize) - 1 );
         	maxBid = Manager.maxBid;
 
         	if(draftedPlayers.length > 0 ) {
