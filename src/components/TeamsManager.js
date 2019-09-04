@@ -43,7 +43,7 @@ export default class TeamsManager extends Component {
 
   addTeam = e => {
     e.preventDefault();
-    let managersArray = this.state.managers;;
+    const managersArray = this.state.managers;
     const nameValue = this.nameInput.current.value;
     const budgetValue = Number(this.budgetInput.current.value);
     let teamID = managersArray.length + 1;
@@ -52,11 +52,10 @@ export default class TeamsManager extends Component {
       managerName: nameValue,
       managerId: teamID
     }
-    console.log(nameValue);
+    console.log(newTeam);
     console.log(budgetValue);
-    managersArray.push(newTeam);
     this.setState({
-      managers: managersArray
+      managers: [{...this.state.managers, newTeam}]
     })
   }
   
