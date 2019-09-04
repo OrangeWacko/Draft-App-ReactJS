@@ -3,7 +3,7 @@
 
 /* MANAGER */
 
-.manager, .drafted-players {
+.manager, .drafted-players, .manager-wrapper {
   min-height: 100%;
   width: 100%;
   background: white;
@@ -14,12 +14,12 @@
   }
 }
 
-.manager .inner-wrapper {
+.manager .inner-wrapper, .manager-wrapper .inner-wrapper {
   max-width: 450px;
   margin: 7% auto;
 }
 
-.manager .inner-wrapper h1 {
+.manager h1, .manager-wrapper h1 {
   text-align: center;
   color: $black;
   letter-spacing: 3px;
@@ -33,17 +33,21 @@
   margin: 0 auto;
 }
 
-.manager .inner-wrapper .fields {
+.manager .fields {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.manager .inner-wrapper .field {
+.manager .field {
   margin-bottom: 10px!important;
   margin-top: 10px!important;
 }
 
-.manager .inner-wrapper .ui.form .field > label {
+.manager .ui.form input {
+  padding: 0.65em 0.5em;
+}
+
+.manager .ui.form .field > label {
   color: lighten($text-color, 20%);
   text-transform: uppercase;
   font-size: 13px;
@@ -61,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5833em 1em;
+  padding: 0.5833em;
 }
 
 .add-player .ui.form .search .icon {
@@ -129,7 +133,7 @@
 
 /* Dropdown Menu */
 
-input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
+input.rbt-input, .rbt-input-hint, .custom-select, input[type="number"], .manager-wrapper input {
   font-family: $font-family-serif;
   font-size: 18px !important;
   height: 55px !important;
@@ -211,7 +215,35 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
 }
 
 .manager .search {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
+}
+
+/* Team Manager */
+.manager .team-manager {
+  margin-top: 3%;
+}
+
+.single-team-card {
+  padding-top: 6px!important;
+  padding-bottom: 6px!important;
+  font-size: 16px;
+  @media screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+
+  .team-inner {
+    background: $black;
+    color: $body-bg;
+    border-radius: 3px;
+    padding: 14px 12px;
+  }
+  .delete-btn {
+    cursor: pointer;
+    float: right;
+    color: $red; 
+    display: block;
+    padding: 4px;
+  }
 }
 
 /* Drafted Players */
@@ -222,6 +254,7 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
   @media screen and (max-width: 767px) {
     padding-right: 20px;
     padding-left: 20px;
+    border-radius: 3px;
   }
 
   .board-wrapper {
@@ -231,7 +264,7 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
       color: $black;
       font-size: 16px;
       margin: 5px 0!important;
-      padding: 0 10px!important;
+      padding: 0 12px!important;
 
       .ui.grid {
         padding: 7px;
@@ -258,7 +291,7 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
 }
 
 @media screen and (min-width: 768px) {
-  .manager .inner-wrapper h1 {
+  .manager h1 {
     font-size: 40px;
   }
 }

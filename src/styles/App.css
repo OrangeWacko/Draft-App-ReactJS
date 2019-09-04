@@ -30967,6 +30967,10 @@ a {
   text-decoration: none; }
 
 /* custom */
+.centered {
+  text-align: center;
+  justify-content: center; }
+
 .container {
   max-width: 100%;
   margin: 0;
@@ -31597,19 +31601,19 @@ th {
 /* Manager Drafting Section: Dropdown + Prices */
 /* Player Search Form */
 /* MANAGER */
-.manager, .drafted-players {
+.manager, .drafted-players, .manager-wrapper {
   min-height: 100%;
   width: 100%;
   background: white;
   padding: 30px; }
-  .manager h3, .drafted-players h3 {
+  .manager h3, .drafted-players h3, .manager-wrapper h3 {
     margin-bottom: 0.8em; }
 
-.manager .inner-wrapper {
+.manager .inner-wrapper, .manager-wrapper .inner-wrapper {
   max-width: 450px;
   margin: 7% auto; }
 
-.manager .inner-wrapper h1 {
+.manager h1, .manager-wrapper h1 {
   text-align: center;
   color: #23313a;
   letter-spacing: 3px;
@@ -31621,15 +31625,18 @@ th {
   display: block;
   margin: 0 auto; }
 
-.manager .inner-wrapper .fields {
+.manager .fields {
   margin-top: 10px;
   margin-bottom: 10px; }
 
-.manager .inner-wrapper .field {
+.manager .field {
   margin-bottom: 10px !important;
   margin-top: 10px !important; }
 
-.manager .inner-wrapper .ui.form .field > label {
+.manager .ui.form input {
+  padding: 0.65em 0.5em; }
+
+.manager .ui.form .field > label {
   color: #6a7072;
   text-transform: uppercase;
   font-size: 13px;
@@ -31646,7 +31653,7 @@ th {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5833em 1em; }
+  padding: 0.5833em; }
 
 .add-player .ui.form .search .icon {
   position: absolute;
@@ -31703,7 +31710,7 @@ th {
   height: 55px; }
 
 /* Dropdown Menu */
-input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
+input.rbt-input, .rbt-input-hint, .custom-select, input[type="number"], .manager-wrapper input {
   font-family: "Lora", serif;
   font-size: 18px !important;
   height: 55px !important; }
@@ -31778,7 +31785,30 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
   display: none; }
 
 .manager .search {
-  margin-bottom: 35px; }
+  margin-bottom: 20px; }
+
+/* Team Manager */
+.manager .team-manager {
+  margin-top: 3%; }
+
+.single-team-card {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  font-size: 16px; }
+  @media screen and (min-width: 1200px) {
+    .single-team-card {
+      font-size: 18px; } }
+  .single-team-card .team-inner {
+    background: #23313a;
+    color: #f5f8fa;
+    border-radius: 3px;
+    padding: 14px 12px; }
+  .single-team-card .delete-btn {
+    cursor: pointer;
+    float: right;
+    color: #f15a28;
+    display: block;
+    padding: 4px; }
 
 /* Drafted Players */
 #root .drafted-players {
@@ -31786,12 +31816,13 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
   @media screen and (max-width: 767px) {
     #root .drafted-players {
       padding-right: 20px;
-      padding-left: 20px; } }
+      padding-left: 20px;
+      border-radius: 3px; } }
   #root .drafted-players .board-wrapper .column.single-player {
     color: #23313a;
     font-size: 16px;
     margin: 5px 0 !important;
-    padding: 0 10px !important; }
+    padding: 0 12px !important; }
     #root .drafted-players .board-wrapper .column.single-player .ui.grid {
       padding: 7px;
       margin: 4px;
@@ -31807,7 +31838,7 @@ input.rbt-input, .rbt-input-hint, .custom-select, input[name="currentBid"] {
           padding: 4px; } }
 
 @media screen and (min-width: 768px) {
-  .manager .inner-wrapper h1 {
+  .manager h1 {
     font-size: 40px; } }
 
 /*

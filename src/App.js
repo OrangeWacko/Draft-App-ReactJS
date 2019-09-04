@@ -18,7 +18,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      managers: [],
+      managers: null,
       draftedPlayers :[],
       authenticated: false,
       user: null
@@ -39,11 +39,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.managersRef = Base.syncState(`teamManagers`, {
-      context: this,
-      state: 'managers',
-      asArray: true
-    });
+   
     // this.playersRef = Base.syncState(`draftedPlayers`, {
     //   context: this,
     //   state: 'draftedPlayers',
@@ -52,10 +48,17 @@ export default class App extends Component {
     //console.log(mainEmail);
     this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
       if (user) {
+        
         this.setState({
           authenticated: true,
-          user: user.email
-        })
+          user: user
+        });
+        
+        this.managersRef = Base.syncState(`teamManagers/${this.state.user.uid}`, {
+          context: this,
+          state: 'managers',
+          asArray: true
+        });
       } else {
         this.setState({
           authenticated: false,
@@ -70,9 +73,9 @@ export default class App extends Component {
   }
 
   componentWillUnmount() {
-    Base.removeBinding(this.managersRef);
-    Base.removeBinding(this.playersRef);
-    this.removeAuthListener()
+    // Base.removeBinding(this.managersRef);
+    // Base.removeBinding(this.playersRef);
+    // this.removeAuthListener();
   }
 
   render() {
@@ -87,7 +90,7 @@ export default class App extends Component {
             <Route exact path="/" component={MainScreen}/>
             <Route path="/manager" render={(props) => <Manager {...props} />} />
             <Route path="/manage-teams" render={(props) => <TeamsManager {...props} />} />
-            <Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
+            //<Route path="/draft-board" render={(props) => <DraftBoard {...props} managers={this.state.managers} />} />
             <Route path="/team/:teamId" render={(props) => <SingleTeam {...props} />}/>
             <Route path="/drafted-players" component={DraftedPlayers}/>
           </div>
