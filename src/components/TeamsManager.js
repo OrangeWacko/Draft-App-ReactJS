@@ -43,7 +43,7 @@ export default class TeamsManager extends Component {
 
   addTeam = e => {
     e.preventDefault();
-    const managersArray = this.state.managers;
+    let managersArray = this.state.managers;
     const nameValue = this.nameInput.current.value;
     const budgetValue = Number(this.budgetInput.current.value);
     let teamID = managersArray.length + 1;
@@ -52,11 +52,13 @@ export default class TeamsManager extends Component {
       managerName: nameValue,
       managerId: teamID
     }
-    console.log(newTeam);
+    console.log(nameValue);
     console.log(budgetValue);
-    this.setState({
-      managers: [{...this.state.managers, newTeam}]
-    })
+    console.log(managersArray);
+    managersArray.push(newTeam);
+    this.setState( {
+      managers: managersArray
+    });
   }
   
   removeTeam(index) {
@@ -81,7 +83,8 @@ export default class TeamsManager extends Component {
 
         this.teamsRef = Base.syncState(`teamManagers/${this.state.user.uid}`, {
           context: this,
-          state: `managers`
+          state: `managers`,
+          asArray: true
         });
 
         this.sizeRef = Base.syncState(`rosters/${this.state.user.uid}/rosterSize`, {
